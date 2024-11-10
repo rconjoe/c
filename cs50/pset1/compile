@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# read -p "target: " target
+target=$1
+gcc -g -o $target $target.c ../libcs50-11.0.3/src/cs50.c
