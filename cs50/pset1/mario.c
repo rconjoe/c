@@ -4,7 +4,7 @@
 int get_size(void);
 void print_grid(int size);
 void print_steps(int size);
-void print_steps_dots(int size);
+void print_steps_right(int size);
 
 
 int main(void)
@@ -13,7 +13,7 @@ int main(void)
     int n = get_size();
 
     // print grid of bricks
-    print_steps(n);
+    print_steps_right(n);
 }
 
 
@@ -40,14 +40,17 @@ void print_steps(int size)
     }
 }
 
-void print_steps_dots(int size)
+void print_steps_right(int size)
 {
+    // for each line
     for (int i = 0; i < size; i++)
     {
-        /*for (int j = i; j < size; j++)*/
-        /*{*/
-        /*    printf("#");*/
-        /*}*/
+        // print dots
+        for (int j = size - 1; j > i; j--)
+        {
+            printf(" ");
+        }
+        // print hashes
         for (int j = 0; j <= i; j++)
         {
             printf("#");
